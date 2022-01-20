@@ -1,0 +1,22 @@
+.image-cart{
+    width: 80px;
+    height: 80px;
+}
+
+
+.cart-end h3{
+    background-color: blanchedalmond;
+    padding: 12px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.cart-end{
+    align-items: flex-end;
+}
+
+.cart-end h3:hover{
+    background-color: #995e74 !important;
+    color: white;
+
+}
