@@ -2,62 +2,90 @@ import { ToastOptions } from "react-toastify";
 import { Action } from "redux";
 
 declare global {
-    namespace JSX {
-      interface IntrinsicElements {
-        'lottie-player': any;
-      }
+  namespace JSX {
+    interface IntrinsicElements {
+      "lottie-player": any;
     }
+  }
 }
 
 export interface Product {
-    imageURL: string,
-    name: string,
-    price: number,
-    category: string,
-    description: string,
-    id: string
+  imageURL: string;
+  name: string;
+  price: number;
+  category: string;
+  description: string;
+  id: string;
 }
 
 export interface Category {
-    name: string,
-    id: string
+  name: string;
+  id: string;
 }
 
-
 export interface reduxState {
-    cartItem : Product[],
+  cartItem: Product[];
 }
 
 export interface Item extends Action {
-    item: Product;
+  item: Product;
 }
 
 export interface LayoutProps {
-    children : any;
-    isLoading : boolean
+  children: any;
+  isLoading: boolean;
+  className: string;
 }
 
 export interface RegisterData {
-    email : string,
-    password: string
-
+  email: string;
+  password: string;
 }
 
 export const options: ToastOptions = {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  };
+  position: "top-right",
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+};
 
+export interface User {
+  email: string;
+  uid: string;
+}
 
-  export interface User{
-    email: string
-  }
+export interface AddressInfo {
+  pincode: string;
+  name: string;
+  address: string;
+  phone: string;
+}
 
+export interface Order {
+  addressInfo: AddressInfo;
+  cartItems: Product[];
+  email: string;
+  id: string;
+  userId: string;
+}
+
+export interface ListProps {
+  // Items: Product[];
+  cartItems: Product[];
+  isCart: boolean;
+}
+
+export const initialProduct = {
+  category: "",
+  imageURL: "",
+  price: 0,
+  name: "",
+  id: "",
+  description: "",
+};
 
 /*
 export const fireProducts: product[] = [
